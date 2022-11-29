@@ -1,6 +1,6 @@
 <?php
 
-// Author: Zejun Li
+// <!-- Group 12 ISTA 498 -->
 class DatabaseAdaptor
 {
     
@@ -21,7 +21,7 @@ class DatabaseAdaptor
     
     public function getFood($input)
     {
-        $stmt = $this->DB->prepare("SELECT * FROM foodtbl WHERE product_name LIKE'%".$input."%' ORDER BY Food_item_score DESC;");
+        $stmt = $this->DB->prepare("SELECT * FROM foodtbl WHERE categories_en LIKE'%".$input."%' ORDER BY Food_item_score DESC;");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }

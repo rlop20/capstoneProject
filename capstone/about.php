@@ -100,8 +100,8 @@ body {
 }
 
 .aboutText {
-	margin: auto; 
-	width : 300px;
+	margin: auto;
+	width: 300px;
 	border: 15px solid green;
 	padding: 50px;
 	margin: 20px;
@@ -126,11 +126,27 @@ body {
 	</div>
 
 	<div class='aboutText'>
-		<p>Our website offers a new way to quickly make a better choice
-			in your diet! Just enter your craving in our search bar and we will
-			give you a healthy version of it.</p>
+		<p>Our website offers a new way to quickly make a better choice in
+			your diet! Just enter your craving in our search bar and we will give
+			you a healthy version of it.</p>
+	
 	</div>
-
+	<div class='aboutText'>
+		<p>How it works: <br>
+		-Search for a food. <br>
+		-Look at the results and click a food that looks best to you.<br>
+		-This will take you to a new page with the information about the food. </p>
+	
+	</div>
+	<div class='aboutText'>
+		<p>How we decide what is outputted: <br><br>
+		Each food is from a rich database filled with many types of foods. 
+		We use the sugar, salts, fats, and proteins from each food. We also
+		use a score from the database that is higher if the food has less
+		processed ingredients. So, the foods chosen contain a nutritious amount
+		of macros such as high protein and a high score which means less
+		ingredients.</p>
+	</div>
 </body>
 
 </html>

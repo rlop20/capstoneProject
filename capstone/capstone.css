@@ -16,33 +16,27 @@ body {
 	border-radius: 5px;
 	box-shadow: 0 0 15px gray;
 	float: left;
-	margin: 40px;
+	margin: 30px;
 	padding: 10px;
 	width: 150px;
-	height: 230px;
+	height: 250px;
 }
 
 
-
-.imgout {
-	height: 150px;
-	width: 150px;
-	float: left;
-	padding-top: -50px;
-}
 
 .imgin {
 	height: 400px;
 	width: 300px;
 	float: right;
 	margin-top: 100px;
-	margin-right: 650px;
+	margin-right: 600px;
 }
 
 .score {
 	margin-left: 30px;
 	margin-top: 30px;
 }
+
 .dot {
 	height: 100px;
 	width: 100px;
@@ -50,34 +44,13 @@ body {
 	border-radius: 50%;
 	display: inline-block;
 	margin-left: 200px;
-  }
-
-.headerHome {
-	border: #974455 solid 3px;
-	bottom: 5px;
-	color: #974455;
-	font-size: 18pt;
-	right: 10%;
-	padding: 3px;
-	position: absolute;
-	margin: 20px;
-}
-
-.header {
-	background-image: url("https://cdn.wallpapersafari.com/14/72/MBtfu9.jpg");
-	box-shadow: 0 5px 5px rgb(58, 37, 37);
-	height: 104px;
-	position: relative;
 }
 
 
-.headerText {
-	margin: 20px;
-}
 
 .header>div {
-	bottom: 0px;
-	color: #6f0218;
+	bottom: -10px;
+	color: black;
 	font-family: Tahoma, sans-serif;
 	font-size: 36pt;
 	position: absolute;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Zejun Li -->
+<!-- Group 12 ISTA 498 -->
 <html>
 
 <head>
@@ -11,59 +11,12 @@
 	
 </script>
 <style>
-body {
-	background-color: #fefcf4;
-	margin: 0px;
-}
-
-.searchBar {
-	width: 500px;
-	margin: auto;
-	font-family: cursive;
-	text-align: center;
-	font-size: 20pt;
-}
-
-.onebook {
-	background-color: #f4f1eb;
-	border-radius: 5px;
-	box-shadow: 0 0 15px gray;
-	float: left;
-	margin: 40px;
-	padding: 10px;
-	width: 150px;
-	height: 230px;
-}
-
 .imgout {
-	height: 150px;
+	height: 140px;
 	width: 150px;
 	float: left;
-	padding-top: -50px;
+	margin-top: -10px;
 }
-
-.imgin {
-	height: 400px;
-	width: 300px;
-	float: right;
-	margin-top: 100px;
-	margin-right: 650px;
-}
-
-.score {
-	margin-left: 30px;
-	margin-top: 30px;
-}
-
-.dot {
-	height: 100px;
-	width: 100px;
-	background-color: rgb(229, 255, 0);
-	border-radius: 50%;
-	display: inline-block;
-	margin-left: 200px;
-}
-
 .headerHome {
 	border: rgb(0, 0, 0) solid 3px;
 	bottom: -20px;
@@ -100,6 +53,18 @@ body {
 	position: absolute;
 	left: 10%;
 }
+
+.aboutText {
+	margin: auto;
+	width: 300px;
+	border: 15px solid green;
+	padding: 50px;
+	margin: 20px;
+	width: 300px;
+	display: flex;
+	justify-content: center;
+}
+
 </style>
 </head>
 
@@ -144,7 +109,7 @@ body {
 						document.getElementById('cardsID').innerHTML = str;
 					} else {
 						var str = "";
-						for (var i = 0; i < 14; i++) {
+						for (var i = 0; i < 7; i++) {
 							var url = array[i].image_url;
 							str += "<div class='onebook'>";
 							if (url != 'undefined') {
@@ -167,9 +132,11 @@ body {
 										+ ")'>";
 							}
 							str += "</div>";
+							
 						}
 						document.getElementById('cardsID').innerHTML = str;
 						document.getElementById('pieID').innerHTML = "";
+						document.getElementById('tableID').innerHTML = "";
 					}
 				}
 			}
@@ -212,7 +179,9 @@ body {
 			proteins = array[index].proteins_100g;
 			score = array[index].Food_item_score;
 			var image = array[index].image_url;
-
+			if (image == 'undefined'){
+				image = "https://toppng.com/uploads/preview/clipart-free-seaweed-clipart-draw-food-placeholder-11562968708qhzooxrjly.png";
+				}
 			str += "<img class = 'imgin' src='"+image+"'>";
 			str += '<span class="dot">';
 			str += "<div class = 'score'> <h1>&nbsp&nbsp" + score
@@ -235,16 +204,35 @@ body {
 					[ 'Food info', 'number' ], [ 'Fat', fat ],
 					[ 'Saturated fat', saturated_fat ], [ 'Sugar', sugar ],
 					[ 'Salt', salt ], [ 'Sodium', sodium ], [ 'Fiber', fiber ],
-					[ 'Calories', calories ], [ 'Proteins', proteins ] ]);
+					[ 'Proteins', proteins ] ]);
 			var optionsP = {
 				backgroundColor : '#fefcf4',
 				title : product,
 				width : 600,
-				height : 600,
+				height : 600
 			};
 			var chart = new google.visualization.PieChart(document
 					.getElementById('pieID'));
+								var data = new google.visualization.DataTable();
+	        data.addColumn('string', 'Nutrition facts');
+	        data.addColumn('number', 'Number');
+	        data.addRows([
+	          ['Fat',  {v: fat}],
+	          ['Saturated fat',   {v:saturated_fat}],
+	          ['Sugar', {v: sugar}],
+	          ['Salt',   {v: salt}],
+	          ['Sodium', {v: sodium}],
+	          ['Fiber', {v: fiber}],
+	          ['Proteins', {v: proteins}],
+	          ['Calories', {v: calories}],
+	        ]);
+	
+	        var table = new google.visualization.Table(document.getElementById('tableID'));
+	
+	        table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
 			chart.draw(dataP, optionsP);
+			
+
 		}
 		
 		function aboutPage(){

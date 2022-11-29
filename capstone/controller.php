@@ -1,5 +1,5 @@
 <?php
-// Author: Zejun Li
+// <!-- Group 12 ISTA 498 -->
 include 'DatabaseAdaptor.php';
 $theDBA = new DatabaseAdaptor();
 
