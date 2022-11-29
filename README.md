@@ -1,5 +1,4 @@
 # capstoneProject
 Repo for capstone project
-Authors:
-Robert Lopez
+Group 12 for ISTA 498
 
